@@ -1,0 +1,714 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="blog,github,hexo,ubuntu,next," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="本文目的：记录博客搭建的过程。
+
+使用的环境：
+Ubuntu 16.04LTS
+nodejs
+hexo
+github：已注册账户并且创建了仓库">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在Ubuntu系统下用Github和Hexo建立自己的博客">
+<meta property="og:url" content="http://gniba.com/2016/07/07/blog-hexo-github-ubuntu.html">
+<meta property="og:site_name" content="Owls Forest">
+<meta property="og:description" content="本文目的：记录博客搭建的过程。
+
+使用的环境：
+Ubuntu 16.04LTS
+nodejs
+hexo
+github：已注册账户并且创建了仓库">
+<meta property="og:updated_time" content="2016-07-22T04:26:14.995Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="在Ubuntu系统下用Github和Hexo建立自己的博客">
+<meta name="twitter:description" content="本文目的：记录博客搭建的过程。
+
+使用的环境：
+Ubuntu 16.04LTS
+nodejs
+hexo
+github：已注册账户并且创建了仓库">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://gniba.com/2016/07/07/blog-hexo-github-ubuntu.html"/>
+
+  <title> 在Ubuntu系统下用Github和Hexo建立自己的博客 | Owls Forest </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Owls Forest</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">A Dreamy Living.</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                在Ubuntu系统下用Github和Hexo建立自己的博客
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-07T11:33:40+08:00" content="2016-07-07">
+              2016-07-07
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/07/07/blog-hexo-github-ubuntu.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/07/07/blog-hexo-github-ubuntu.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>本文目的：记录博客搭建的过程。</p>
+<hr>
+<h1 id="使用的环境："><a href="#使用的环境：" class="headerlink" title="使用的环境："></a>使用的环境：</h1><ul>
+<li>Ubuntu 16.04LTS</li>
+<li>nodejs</li>
+<li>hexo</li>
+<li><p>github：已注册账户并且创建了仓库</p>
+<a id="more"></a>
+<h1 id="方法步骤："><a href="#方法步骤：" class="headerlink" title="方法步骤："></a>方法步骤：</h1><h2 id="安装："><a href="#安装：" class="headerlink" title="安装："></a>安装：</h2><h3 id="安装Git-终端输入以下命令，下同。"><a href="#安装Git-终端输入以下命令，下同。" class="headerlink" title="安装Git,终端输入以下命令，下同。"></a>安装Git,终端输入以下命令，下同。</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install git</div></pre></td></tr></table></figure>
+<p>绑定github账户:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git config --global user.name <span class="string">"Github用户名"</span></div><div class="line">git config --global user.email <span class="string">"注册Github用的邮箱"</span></div></pre></td></tr></table></figure>
+<p>生成新的SSH key</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C <span class="string">"注册Github用的邮箱"</span></div></pre></td></tr></table></figure>
+<p>看到 <code>Enter file in which to save the key (/home/bruce/.ssh/id_rsa):</code> 直接敲回车<br>看到 <code>Enter passphrase (empty for no passphrase):</code> 设置一个密码<br>看到 <code>Enter same passphrase again:</code> 重复上面的密码<br>找到刚生成的SSH key，打开id_rsa.pub复制里面的内容：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> ~/.ssh</div><div class="line">gedit id_rsa.pub</div></pre></td></tr></table></figure>
+<p>在github里New SSH key 并粘贴。然后测试：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh -T git@github.com</div></pre></td></tr></table></figure>
+<p>看到<code>Are you sure you want to continue connecting (yes/no)?</code>输入yes。</p>
+<h3 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install nodejs</div></pre></td></tr></table></figure>
+<h3 id="安装npm"><a href="#安装npm" class="headerlink" title="安装npm"></a>安装npm</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install npm</div></pre></td></tr></table></figure>
+<h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo npm install -g hexo</div></pre></td></tr></table></figure>
+<h3 id="安装hexo-deployer-git（该命令运行时出错，重复运行3、4次后终于不再报错）"><a href="#安装hexo-deployer-git（该命令运行时出错，重复运行3、4次后终于不再报错）" class="headerlink" title="安装hexo-deployer-git（该命令运行时出错，重复运行3、4次后终于不再报错）"></a>安装hexo-deployer-git（该命令运行时出错，重复运行3、4次后终于不再报错）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
+<h2 id="建立博客："><a href="#建立博客：" class="headerlink" title="建立博客："></a>建立博客：</h2><p>执行下面命令，如果出错，命令前面加sudo,如：<code>sudo hexo init</code></p>
+<h3 id="在blog目录（如果没有blog目录，hexo会自动创建）初始化hexo"><a href="#在blog目录（如果没有blog目录，hexo会自动创建）初始化hexo" class="headerlink" title="在blog目录（如果没有blog目录，hexo会自动创建）初始化hexo:"></a>在blog目录（如果没有blog目录，hexo会自动创建）初始化hexo:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo init blog</div></pre></td></tr></table></figure>
+<p>该命令执行完默认会生成以下目录和文件：<br>├── node_modules<br>├── scaffolds<br>├── source<br>├── themes<br>├── _config.yml<br>├── db.json<br>└── package.json<br>解释：scaffolds文件夹存放模板文件（新建文章、页面、草稿等需要基于模板创建）；<br>source文件夹存放用户内容(文章、图片、CSS、JS等)；<br>themes文件夹存放主题文件；<br>_config.yml是网站的配置文件，可以用文本编辑器编辑；<br>db.json是缓存文件；<br>package.json为应用程序数据文件。</p>
+<h3 id="进入blog目录"><a href="#进入blog目录" class="headerlink" title="进入blog目录"></a>进入blog目录</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> blog</div></pre></td></tr></table></figure>
+<h3 id="安装npm-1"><a href="#安装npm-1" class="headerlink" title="安装npm"></a>安装npm</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install</div></pre></td></tr></table></figure>
+<h3 id="启动hexo服务器"><a href="#启动hexo服务器" class="headerlink" title="启动hexo服务器"></a>启动hexo服务器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo server</div></pre></td></tr></table></figure>
+<p>OK,现在浏览器打开<code>http://localhost:4000</code>就能看到博客了</p>
+<h2 id="配置博客："><a href="#配置博客：" class="headerlink" title="配置博客："></a>配置博客：</h2><p>打开_config.yml,修改网站的相关配置信息：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">title: Owls Forest                          //网站标题</div><div class="line">subtitle: A Dreamy Living.                      //副标题</div><div class="line">description: A regular guy.                   //简介</div><div class="line">author: Bruce Lou                             //作者</div><div class="line">language: zh-Hans                             //语言</div><div class="line">url: http://gniba.com                         //网址</div><div class="line">permalink: :year/:month/:day/:title.html      //文章链接格式</div><div class="line">theme: next                                   //主题</div></pre></td></tr></table></figure>
+<p>最后为github配置deploy，在_config.yml文件的最下面</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  <span class="built_in">type</span>: git</div><div class="line">  repo: https://github.com/Github用户名/Github用户名.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
+<h2 id="配置域名："><a href="#配置域名：" class="headerlink" title="配置域名："></a>配置域名：</h2><p>在/source文件夹下面新建<code>CNAME</code>文件，在里面输入域名<code>gniba.com</code></p>
+<h2 id="写一篇文章："><a href="#写一篇文章：" class="headerlink" title="写一篇文章："></a>写一篇文章：</h2><p>输入命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new <span class="string">'first-page'</span></div></pre></td></tr></table></figure>
+<p>该命令在<code>source/_posts/</code>目录新建<code>first-page.md</code>文件（.md是markdown格式）。打开并编辑它：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">title: <span class="string">"我的第一篇博文"</span></div><div class="line">date: 2016-07-05 11:33:40</div><div class="line">tags:</div><div class="line">- first</div><div class="line">- hexo</div><div class="line">- github</div><div class="line">categories:</div><div class="line">- blog</div><div class="line">---</div><div class="line">从这里开始，写一些有用的东西，完成你的第一篇博文。</div></pre></td></tr></table></figure>
+<h2 id="新建关于页面和标签页面："><a href="#新建关于页面和标签页面：" class="headerlink" title="新建关于页面和标签页面："></a>新建关于页面和标签页面：</h2><h3 id="关于页面："><a href="#关于页面：" class="headerlink" title="关于页面："></a>关于页面：</h3><p>命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new page about</div></pre></td></tr></table></figure>
+<p>该命令在/source目录下新建/about目录，里面的index.md文件即是关于页面，打开并编辑它。<br>浏览器输入<code>http://localhost:4000/about</code>访问</p>
+<h3 id="标签页面："><a href="#标签页面：" class="headerlink" title="标签页面："></a>标签页面：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new page tags</div></pre></td></tr></table></figure>
+<p>该命令在/source目录下新建/tags目录，里面的index.md文件即是标签页面，打开并编辑：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">title: 标签</div><div class="line">date: 2016-07-07 22:48:07</div><div class="line"><span class="built_in">type</span>: <span class="string">"tags"</span>                 //设置页面类型为 标签</div><div class="line">---</div></pre></td></tr></table></figure>
+<h2 id="主题，使用NexT"><a href="#主题，使用NexT" class="headerlink" title="主题，使用NexT"></a>主题，使用NexT</h2><h3 id="获取主题："><a href="#获取主题：" class="headerlink" title="获取主题："></a>获取主题：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">clone</span> https://github.com/iissnan/hexo-theme-next themes/next</div></pre></td></tr></table></figure>
+<h3 id="清除缓存并验证主题："><a href="#清除缓存并验证主题：" class="headerlink" title="清除缓存并验证主题："></a>清除缓存并验证主题：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo s --debug</div></pre></td></tr></table></figure>
+<p>用浏览器访问 <code>http://localhost:4000</code>，如果没有错误提示即是主题安装成功。</p>
+<h3 id="修改主题配置文件-themes-next-config-yml："><a href="#修改主题配置文件-themes-next-config-yml：" class="headerlink" title="修改主题配置文件/themes/next/_config.yml："></a>修改主题配置文件<code>/themes/next/_config.yml</code>：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">keywords:            //添加关键字</div><div class="line">scheme:Pisces        //选择主题样式</div><div class="line">about:               //显示关于：去掉about前面的<span class="comment">#</span></div><div class="line">sidebar</div><div class="line">  display: always    //侧边栏一直显示</div></pre></td></tr></table></figure>
+<h2 id="生成网站，发布到Github-page"><a href="#生成网站，发布到Github-page" class="headerlink" title="生成网站，发布到Github page"></a>生成网站，发布到Github page</h2><p>清除缓存</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo clean</div></pre></td></tr></table></figure>
+<p>生成静态文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo generate</div></pre></td></tr></table></figure>
+<p>部署(此命令与上面一条命令可一起简写为： <code>hexo d --g 或者 hexo g --d</code>)：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo deploy</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<p>博客搭建历时一天，并参考了多篇网友分享的文章（偷个懒就不一一列出了），在此一并致谢！<br>同样感谢<a href="https://pages.github.com/" target="_blank" rel="external">Github Pages</a>、<a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>、<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="external">NexT</a>！</p>
+<p>更多关于Hexo的内容请参阅<a href="https://hexo.io/docs/" target="_blank" rel="external">Hexo Docs</a>或<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">中文文档</a>。<br>Now, 开始享受你的博客之旅吧！</p>
+<blockquote>
+<p>You are never too old to learn.</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/blog/" rel="tag">#blog</a>
+          
+            <a href="/tags/github/" rel="tag">#github</a>
+          
+            <a href="/tags/hexo/" rel="tag">#hexo</a>
+          
+            <a href="/tags/ubuntu/" rel="tag">#ubuntu</a>
+          
+            <a href="/tags/next/" rel="tag">#next</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/07/11/next-custom.html" rel="prev" title="自定义NexT.Pisces主题">
+                自定义NexT.Pisces主题 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://gniba.com/images/avatar.png"
+               alt="Bruce Lou" />
+          <p class="site-author-name" itemprop="name">Bruce Lou</p>
+          <p class="site-description motion-element" itemprop="description">A regular guy.</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/StrugglingOwl" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/adreamyliving" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#使用的环境："><span class="nav-number">1.</span> <span class="nav-text">使用的环境：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#方法步骤："><span class="nav-number">2.</span> <span class="nav-text">方法步骤：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装："><span class="nav-number">2.1.</span> <span class="nav-text">安装：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Git-终端输入以下命令，下同。"><span class="nav-number">2.1.1.</span> <span class="nav-text">安装Git,终端输入以下命令，下同。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Node-js"><span class="nav-number">2.1.2.</span> <span class="nav-text">安装Node.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装npm"><span class="nav-number">2.1.3.</span> <span class="nav-text">安装npm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装hexo"><span class="nav-number">2.1.4.</span> <span class="nav-text">安装hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装hexo-deployer-git（该命令运行时出错，重复运行3、4次后终于不再报错）"><span class="nav-number">2.1.5.</span> <span class="nav-text">安装hexo-deployer-git（该命令运行时出错，重复运行3、4次后终于不再报错）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#建立博客："><span class="nav-number">2.2.</span> <span class="nav-text">建立博客：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在blog目录（如果没有blog目录，hexo会自动创建）初始化hexo"><span class="nav-number">2.2.1.</span> <span class="nav-text">在blog目录（如果没有blog目录，hexo会自动创建）初始化hexo:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进入blog目录"><span class="nav-number">2.2.2.</span> <span class="nav-text">进入blog目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装npm-1"><span class="nav-number">2.2.3.</span> <span class="nav-text">安装npm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动hexo服务器"><span class="nav-number">2.2.4.</span> <span class="nav-text">启动hexo服务器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置博客："><span class="nav-number">2.3.</span> <span class="nav-text">配置博客：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置域名："><span class="nav-number">2.4.</span> <span class="nav-text">配置域名：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#写一篇文章："><span class="nav-number">2.5.</span> <span class="nav-text">写一篇文章：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新建关于页面和标签页面："><span class="nav-number">2.6.</span> <span class="nav-text">新建关于页面和标签页面：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#关于页面："><span class="nav-number">2.6.1.</span> <span class="nav-text">关于页面：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#标签页面："><span class="nav-number">2.6.2.</span> <span class="nav-text">标签页面：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主题，使用NexT"><span class="nav-number">2.7.</span> <span class="nav-text">主题，使用NexT</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#获取主题："><span class="nav-number">2.7.1.</span> <span class="nav-text">获取主题：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#清除缓存并验证主题："><span class="nav-number">2.7.2.</span> <span class="nav-text">清除缓存并验证主题：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改主题配置文件-themes-next-config-yml："><span class="nav-number">2.7.3.</span> <span class="nav-text">修改主题配置文件/themes/next/_config.yml：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生成网站，发布到Github-page"><span class="nav-number">2.8.</span> <span class="nav-text">生成网站，发布到Github page</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Bruce Lou</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'owlsforest';
+      var disqus_identifier = '2016/07/07/blog-hexo-github-ubuntu.html';
+      var disqus_title = "在Ubuntu系统下用Github和Hexo建立自己的博客";
+      var disqus_url = 'http://gniba.com/2016/07/07/blog-hexo-github-ubuntu.html';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
