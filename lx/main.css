@@ -1,0 +1,251 @@
+/* 配色，颜色由深到浅,松枝绿。取自背景图。
+第1级：#214435
+第2级：#3e6852
+第3级：#699871
+第4级：#99bf93
+*/
+
+
+body{
+  background-color:#699871;
+  background-image:url(bg.png);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+}
+div{
+  font-size: 16pt;
+  font-family: 宋体-简,微软雅黑,苹方-简,宋体;
+  color:#002233;
+
+  position: absolute;
+
+  /* 设置dvi居中 */
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left:0;
+  margin: auto;
+}
+hr{
+  width: 350px;
+  height: 1px;
+  border: 0;
+  background-color: #214435;
+}
+
+a{
+  text-decoration: none;
+  padding: 6pt;
+}
+a:link{
+  color: #214435;
+}
+a:hover{
+  color: white;
+  font-weight: bolder;
+  background-color: #8da68f;
+  padding: 6pt;
+}
+a:visited{
+  color: grey;
+}
+a:active{
+  color: blue;
+}
+
+.welcome{
+  text-align: center;
+  background-color: lightblue;
+  width: 400px;
+  height: 230px;
+
+  /* 设置dvi居中 */
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left:0;
+  margin: auto;
+
+  padding: 40px;
+  border: 3pt double #FFFFFF;
+
+  cursor: default;
+}
+.welcome_text{
+  font-size: 12pt;
+  color: grey;
+}
+
+/* blog页面div框架 */
+.b_top{
+  background-color: #f6f1df;
+  background-image:url(title_bg.png);
+  background-size: contain;
+  background-position: right;
+  background-repeat: no-repeat;
+  width: 900px;
+  height: 140px;
+
+  /* 设置dvi居顶 */
+  bottom: auto;
+}
+
+.banner{
+  background-color: #99bf94;
+  height: 40px;
+  width: 900px;
+  top: -260px;
+  z-index: 3;
+  position: absolute;
+}
+
+.b_middle_left{
+  background-color: white;
+  width: 280px;
+  height: 1200px;
+
+  /* 设置dvi中间部分位置左侧 */
+  top: 190px;
+  bottom: auto;
+  left: -620px;
+  z-index: 1;
+}
+
+.b_middle_right{
+  background-color: #ffffff;
+  width: 619px;
+  height: 1200px;
+  border-left: 1pt double darkgreen;
+
+  /* 设置dvi中间部分位置右侧 */
+  top: 190px;
+  bottom: auto;
+  right: -280;
+  z-index: 2;
+}
+
+.b_bottom{
+  background-color: lightblue;
+  width: 900px;
+  height: 100px;
+  text-align: center;
+
+  /* 设置dvi居底 */
+  top: auto;
+  bottom: -905px;
+}
+
+/* 回顶部小箭头图标 */
+.go_top{
+  border: 3px double red;
+  width:30px;
+  height:30px;
+  position: fixed;
+  top: auto;
+  bottom: 10;
+  left: auto;
+  right: 10;
+}
+
+.banner_table{
+  position: absolute;
+  font-size: 16pt;
+  width:100%;
+  z-index: 100;
+}
+tr{
+  width: 100%;
+  padding: 5pt;
+  text-align: center;
+}
+
+.h1_title{
+  padding-left: 10pt;
+
+  /* 博客名字颜色，背景图片颜色由深到浅第2级 */
+  color: #3e6852;
+}
+.table_porf{
+  width: 280px;
+  background-color: white;
+}
+
+.porf_img{
+  height: 240px;
+  width: 240px;
+  padding: 10pt;
+}
+
+.table_left{
+  width: 280px;
+  text-align: left;
+}
+.table_left th{
+  background-color: lightblue;
+  font-size: 20pt;
+  text-align: left;
+  padding-left: 6px;
+  border-bottom: 2px double darkgreen;
+}
+.table_left tr{
+  background-color: white;
+  font-size: 16pt;
+  text-align: left;
+  line-height: 40px;
+}
+
+.search1{
+  background-color: lightblue;
+  text-align: right;
+  height: 34px;
+  padding-right: 2px;
+  top: -106px;
+}
+
+marquee{
+  width: 700px;
+  text-align: left;
+}
+
+.a_name_hidn{
+  visibility: hidden;
+}
+
+.lantern1{
+
+}
+
+span{
+  border: 1px solid #FF0000;
+  width: 608px;
+  height: 160px;
+  margin: 5px;
+  position: absolute;
+  z-index: 1500;
+  background-color: #eeeeee;
+}
+span a:hover{
+  z-index: 2000;
+  background-color: inherit;
+}
+span marquee{
+  behavior: scroll;
+  height: inherit;
+  width: inherit;
+}
+span img{
+  width: 300px;
+  height: 160px;
+}
+
+select{
+  height: 32px;
+  position: relative;
+  z-index: 6000;
+  font-size: 16pt;
+  font-family: inherit;
+  color: orange;
+  background-color: #6e6e6e;
+}
